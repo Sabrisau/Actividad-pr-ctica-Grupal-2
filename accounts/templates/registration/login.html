@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%block title%}Iniciar sesión{%endblock%}
+{%block content%}
+    <div class="accounts-form"> 
+        <h1>Iniciar sesión</h1>
+        <form method="POST">
+            {%csrf_token%}
+            {{form.as_ul}}
+            <button type="submit">Iniciar sesión</button>
+            <p>Todavía no tenes una cuenta?</p>
+            <button><a href="{%url 'register'%}">Registrarse</button></a></button>
+        </form>
+    </div>
+{%endblock%}
