@@ -125,6 +125,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Configuracion de Redirecciones de Inicio y Cierre de Sesión
+
+LOGIN_REDIRECT_URL = 'home'  
+LOGOUT_REDIRECT_URL = 'accounts/login'
+
 ## Configuración de sesiones
 
 SESSION_COOKIE_AGE = 1800 #1/2 hora
