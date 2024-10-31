@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{%block title%}{%endblock%}</title>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'scrum/styles.css' %}">
+        {%block extras%}{%endblock%} <!-- por si se necesitan incoporar otros estilos/scripts/etc -->
+    </head>
+    <body>
+        <header>
+            <h2>SCRUM</h2>
+            {%include "navbar.html"%}
+        </header>
+        <main>
+            <div class="content">
+                {%block content%}
+                {%endblock%}
+            </div>
+        </main>
+    </body>
+</html>

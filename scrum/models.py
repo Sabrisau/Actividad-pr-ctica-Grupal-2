@@ -26,7 +26,7 @@ class Sprint(models.Model):
         ] 
     
     def __str__(self):
-        return f'Sprint: {self.nombre}\nObjetivo: {self.objetivo}\nScrum master: {self.scrum_master.username}\nFecha de inicio: {self.fecha_inicio}'
+        return f'Sprint: {self.nombre}\nObjetivo: {self.objetivo}\nFecha de inicio: {self.fecha_inicio}'
 
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)

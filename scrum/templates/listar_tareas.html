@@ -1,0 +1,10 @@
+{%if tareas%}
+    {%for tarea in tareas%}
+        <div class="tarea-item-lista">
+            <h2>{{tarea.titulo}} - sprint: {{tarea.sprint_asignado.nombre}}</h2>
+            <span>----------------------</span>
+        </div>
+    {%endfor%}
+{%else%}
+    <h3>No hay tareas!</h3>
+{%endif%}

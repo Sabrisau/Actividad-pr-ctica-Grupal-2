@@ -1,5 +1,9 @@
 {%extends "base.html"%}
 {%block title%}Iniciar sesión{%endblock%}
+{%block extras%}
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
+{%endblock%}
 {%block content%}
     <div class="accounts-form"> 
         <h1>Iniciar sesión</h1>

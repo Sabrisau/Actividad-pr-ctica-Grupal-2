@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{%block title%} Crear nuevo post {%endblock%}
+{%block content%}
+    <h1>Crea una nueva tarea!</h1>
+    <form method="POST" class="tarea-form">
+        {%csrf_token%}
+        {{form.as_ul}}
+        <button type="submit">Crear</button>
+    </form>
+{%endblock%}
