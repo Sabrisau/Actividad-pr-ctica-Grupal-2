@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a SCRUM</h1>
+    
+    <p>
+        {% if user.is_authenticated %}
+            ¡Hola, {{ user.username }}! Bienvenido de nuevo. Aquí puedes gestionar tus tareas y acceder a todas las funcionalidades de la aplicación.
+        {% else %}
+            ¡Bienvenido a nuestra plataforma de gestión SCRUM! Por favor, <a href="{% url 'login' %}">inicia sesión</a> o <a href="{% url 'register' %}">regístrate</a> para comenzar.
+        {% endif %}
+    </p>
+    <br><br><br>
+    
+    <h2>Accesos Rápidos</h2>
+    <ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'crear-tarea' %}">Crear nueva tarea</a></li>
+            <li><a href="{% url 'listar-tareas-a-mi-cargo' %}">Ver tareas a mi cargo</a></li>
+            <li><a href="{% url 'listar-tareas' %}">Ver todas las tareas</a></li>
+        {% else %}
+            <li>Regístrate para comenzar a gestionar tus tareas de manera eficaz.</li>
+        {% endif %}
+    </ul>
+{% endblock %}

@@ -5,6 +5,9 @@ from django.views.generic import CreateView, ListView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Tarea
 
+def home(request):
+    return render(request, 'home.html')
+
 class CrearTarea(LoginRequiredMixin, CreateView):
     model = Tarea
     fields = ['titulo', 'descripcion', 'criterios_aceptacion', 'prioridad', 'estado', 'esfuerzo_estimado', 'responsable', 'sprint_asignado', 'dependencias', 'bloqueadores']
