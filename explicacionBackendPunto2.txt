@@ -1,0 +1,39 @@
+Django ofrece varios backends para almacenar los datos de sesión, cada uno con sus ventajas y desventajas. 
+Se pueden configurar con la opción SESSION_ENGINE en settings.py.
+
+1) Base de Datos ('django.contrib.sessions.backends.db')
+
+Ventajas: Es el backend predeterminado y no requiere configuraciones adicionales 
+si se tiene habilitada la base de datos en Django. Las sesiones se almacenan de manera persistente 
+en la base de datos.
+
+Desventajas: Puede ser más lento en comparación con otros backends, especialmente si hay muchas 
+consultas simultáneas.
+
+2) Cache ('django.contrib.sessions.backends.cache')
+
+Ventajas: Es rápido y adecuado para almacenar datos temporales. Usarlo con una caché en memoria 
+(como Redis o Memcached) mejora el rendimiento.
+
+Desventajas: Los datos de sesión no se guardan de forma persistente, por lo que se perderán si el sistema de caché se reinicia.
+
+3) Cache + Base de Datos ('django.contrib.sessions.backends.cached_db')
+
+Ventajas: Combina velocidad y persistencia. Las sesiones se guardan en caché y se escriben en la base de datos, 
+asegurando que no se pierdan en caso de fallo de la caché.
+
+Desventajas: Es un poco más complejo y requiere configuración tanto de la base de datos como del sistema de caché.
+
+4) Sistema de Archivos ('django.contrib.sessions.backends.file')
+
+Ventajas: Fácil de configurar y útil si no se quiere usar una base de datos o caché.
+Desventajas: Puede ser lento y no es adecuado para aplicaciones con gran volumen de tráfico. 
+Además, es más complicado de gestionar en entornos distribuidos o en múltiples servidores.
+
+5) Cookies Firmadas ('django.contrib.sessions.backends.signed_cookies')
+
+Ventajas: No requiere almacenamiento en el servidor ya que los datos de sesión se almacenan 
+en la propia cookie del navegador.
+
+Desventajas: Hay un límite de tamaño para las cookies (4 KB), y es menos seguro para almacenar datos 
+confidenciales. Si la información de la sesión es muy extensa, este backend no es recomendable.
