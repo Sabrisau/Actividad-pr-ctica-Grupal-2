@@ -1,9 +1,11 @@
 {%if tareas%}
     {%for tarea in tareas%}
-        <div class="tarea-item-lista">
-            <h2>{{tarea.titulo}} - sprint: {{tarea.sprint_asignado.nombre}}</h2>
-            <span>----------------------</span>
-        </div>
+        {% if 'scrum.view_epica' in permisos or 'scrum.view_sprint' in permisos or 'scrum.view_tarea' in permisos %}
+            <div class="tarea-item-lista">
+                <h2>{{tarea.titulo}} - sprint: {{tarea.sprint_asignado.nombre}}</h2>
+                <span>----------------------</span>
+            </div>
+        {%endif%}
     {%endfor%}
 {%else%}
     <h3>No hay tareas!</h3>

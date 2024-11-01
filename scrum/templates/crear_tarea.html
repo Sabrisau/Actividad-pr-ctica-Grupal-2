@@ -1,10 +1,14 @@
-{%extends "base.html"%}
-{%block title%} Crear nuevo post {%endblock%}
-{%block content%}
-    <h1>Crea una nueva tarea!</h1>
-    <form method="POST" class="tarea-form">
-        {%csrf_token%}
-        {{form.as_ul}}
-        <button type="submit">Crear</button>
-    </form>
-{%endblock%}
+{% extends "base.html" %}
+{% block title %} Crear nuevo post {% endblock %}
+{% block content %}
+    {% if 'scrum.add_epica' in permisos or 'scrum.add_sprint' in permisos or 'scrum.add_tarea' in permisos %}
+        <h1>Crea una nueva tarea!</h1>
+        <form method="POST" class="tarea-form">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button type="submit">Crear</button>
+        </form>
+    {% else %}
+        <h2>No tienes permisos para crear tareas.</h2>
+    {% endif %}
+{% endblock %}

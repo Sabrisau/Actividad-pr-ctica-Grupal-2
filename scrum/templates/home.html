@@ -13,15 +13,4 @@
         {% endif %}
     </p>
     <br><br><br>
-    
-    <h2>Accesos Rápidos</h2>
-    <ul>
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'crear-tarea' %}">Crear nueva tarea</a></li>
-            <li><a href="{% url 'listar-tareas-a-mi-cargo' %}">Ver tareas a mi cargo</a></li>
-            <li><a href="{% url 'listar-tareas' %}">Ver todas las tareas</a></li>
-        {% else %}
-            <li>Regístrate para comenzar a gestionar tus tareas de manera eficaz.</li>
-        {% endif %}
-    </ul>
 {% endblock %}
