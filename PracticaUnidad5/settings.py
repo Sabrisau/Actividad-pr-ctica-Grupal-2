@@ -144,6 +144,7 @@ CACHES = {
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db' #Por ahora, vamos a utilizar este sistema de backend
 SESSION_COOKIE_HTTPONLY = True  #Con esto evitamos que javascript acceda a la cookie de sesion (por cuestiones de seguridad!)
 SESSION_COOKIE_SECURE = True  #Usa HTTPS para las cookies (si llega a dar problemas desactivar, en teoria se usa en produccion)
+CSRF_COOKIE_SECURE = True #Se envia la cookie CSRF tambien solo por HTTPS (nuevamente, si llega a dar problemas desactivar, se usa en produccion!)
 
 SESSION_COOKIE_AGE = 1800 #1/2 hora
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
