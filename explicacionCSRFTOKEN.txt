@@ -1,0 +1,26 @@
+Django protege contra la falsificación de solicitudes entre sitios mediante el middleware CsrfViewMiddleware. 
+Este middleware verifica si las solicitudes son seguras en función de la verificación del token. 
+Este middleware utiliza el token que configuramos en los formularios, cuando agregamos {% csrf_token %}.
+
+Implementacion en el projecto:
+
+*Plantilla crear_tarea.html
+La etiqueta {% csrf_token %} genera un campo oculto con el token CSRF.
+El formulario envía una solicitud POST, y el token CSRF se envía junto con el resto de los datos del formulario.
+Django verifica este token cuando se procesa la solicitud en la vista correspondiente. 
+Si el token es válido, el formulario se procesa; de lo contrario, se rechaza.
+
+* Plantilla login.html
+Se incluye el token CSRF en el formulario de inicio de sesión para proteger la autenticación del usuario.
+El proceso es el mismo: el token CSRF se genera y verifica cuando el usuario intenta enviar el formulario de inicio 
+de sesión. 
+Esto evita que un atacante pueda hacer que el usuario inicie sesión de manera malintencionada desde otro sitio.
+
+*Plantilla registro.html
+El token CSRF también se utiliza en el formulario de registro para proteger la creación de cuentas.
+Al igual que en los otros ejemplos, el token CSRF protege esta solicitud POST para asegurarse de que el usuario está 
+interactuando directamente con el sitio web autorizado.
+
+Si olvidas incluir {% csrf_token %} en un formulario que hace una solicitud POST, Django devolverá un error 403 
+Forbidden cuando intentes enviar el formulario. 
+Esto se debe a que Django no puede verificar que la solicitud es legítima y no proviene de un sitio externo malicioso.
