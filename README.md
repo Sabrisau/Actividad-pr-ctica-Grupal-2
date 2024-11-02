@@ -49,6 +49,9 @@ python manage.py runserver
 ## Características
 
 -Autenticación de Usuarios: Los usuarios pueden registrarse e iniciar sesión en el sistema.
+
 -Gestión de Tareas: Los usuarios con permisos pueden crear nuevas tareas.
+
 -Protección CSRF: Se utiliza el token CSRF en los formularios para proteger las solicitudes POST y evitar ataques de falsificación.
+
 -Permisos Personalizados: Los permisos de creación están restringidos a ciertos roles.
