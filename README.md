@@ -41,9 +41,13 @@ Ejecutar inmediatamente este comando para ejecutar la migración inicial:
 
 `python manage.py migrate`
 
-### 5. Ejecuta el servidor de desarrollo:
+
+## Ejecución
+Ejecuta el servidor de desarrollo:
 
 `python manage.py runserver`
+
+Accede a la aplicación en tu navegador en la dirección http://localhost:8000.
 
 ## Características
 
