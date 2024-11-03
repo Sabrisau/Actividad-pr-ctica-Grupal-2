@@ -45,7 +45,6 @@ li:hover a {
 
 .content {
     width: 80%;
-    max-width: 80%;
     margin: 5rem auto;
     text-align: center;
     background-color: white;
@@ -90,7 +89,7 @@ button a {
 }
 
 .tarea-item-lista{
-    display: flex;
+    display: block;
     width: 100%;
     margin: 20px 0px;
     padding: 0.5rem;
@@ -164,6 +163,11 @@ button a {
     }
 }
 
+.editar-eliminar-tarea{
+    display: flex;
+    flex-direction: row;
+}
+
 .editar-eliminar-tarea a{
     width: fit-content;
     background-color: rgb(126, 79, 255);
@@ -187,7 +191,18 @@ button a {
     font-size: 20px;
 
     .negrita{
+        font-family: monospace;
         font-weight: bold;
         font-size: 22px;
+    }
+}
+
+.estadoTarea{
+    font-size: 18px;
+    margin-bottom: 30px;
+
+    .negrita{
+        font-family: monospace;
+        font-weight: bold;
     }
 }

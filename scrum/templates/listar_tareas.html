@@ -3,7 +3,14 @@
         {% if 'scrum.view_epica' in permisos or 'scrum.view_sprint' in permisos or 'scrum.view_tarea' in permisos %}
             <div class="tarea-item-lista">
                 <h2>{{tarea.titulo}} - sprint: {{tarea.sprint_asignado.nombre}}</h2>
+                <div class="estadoTarea"> Estado: <span class="negrita"> {{tarea.estado}} </span></div>
                 <div class="editar-eliminar-tarea">
+                    {% if 'scrum.permisoMarcarTarea' in permisos and tarea.estado != 'completada' %}
+                        <form action="{% url 'marcar_completada' tarea.pk %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Marcar como completada</button>
+                        </form>
+                    {% endif %}
                     <a href="{% url 'editar_tarea' tarea.pk%}">Editar Tarea</a>
                     <a href="{% url 'eliminar_tarea' tarea.pk%}">Eliminar Tarea</a>
                 </div>

@@ -43,8 +43,7 @@ Ejecutar inmediatamente este comando para ejecutar la migración inicial:
 
 ### 5. Ejecuta el servidor de desarrollo:
 
-python manage.py runserver
-
+`python manage.py runserver`
 
 ## Características
 

@@ -49,6 +49,10 @@ class Tarea(models.Model):
             models.CheckConstraint(check=models.Q(estado__in=["POR_HACER", "EN_PROGRESO", "COMPLETADA"]), name='estado_valido_tarea'),
             models.UniqueConstraint(fields=['titulo','sprint_asignado'], name='unique_tarea_sprint'),
         ]
+
+        permissions = [
+            ('permisoMarcarTarea', 'Puede marcar una tarea como completada.')
+        ]
     
     def __str__(self):
         return f'Titulo: {self.titulo}\nDescripción: {self.descripcion}\nEstado: {self.estado}\nResponsable: {self.responsable.username}\nSprint: {self.sprint_asignado}'
