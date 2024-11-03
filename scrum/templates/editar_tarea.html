@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Crear nuevo post {% endblock %}
+{% block content %}
+    {% if 'scrum.change_epica' in permisos or 'scrum.change_sprint' in permisos or 'scrum.change_tarea' in permisos %}
+        <h1>Editar la tarea {{ tarea.nombre}}: </h1>
+        <form method="POST" class="tarea-form">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button type="submit">Guardar cambios</button>
+        </form>
+    {% else %}
+        <h2>No tienes permisos para editar tareas.</h2>
+    {% endif %}
+{% endblock %}

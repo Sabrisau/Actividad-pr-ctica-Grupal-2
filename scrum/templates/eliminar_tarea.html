@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block title%} Ver Tareas {%endblock%}
+{%block content%}
+
+    <div class="confirmacion-eliminar-texto">
+        <h1>¿Confirma que desea eliminar esta tarea?</h1>
+        <ul>
+            <li><span class="negrita">Titulo: </span>{{ tarea.titulo }}</li>
+            <li><span class="negrita">Descripción: </span>{{ tarea.descripcion }}</li>
+            <li><span class="negrita">Responsable: </span>{{ tarea.responsable }}</li>
+            <li><span class="negrita">Sprint asignado: </span>{{ tarea.sprint_asignado.nombre }}</li>
+        </ul>
+        <h2></h2>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">ELIMINAR</button>
+    </form>
+    <button><a class="boton-cancelar" href="{% url 'listar-tareas' %}">CANCELAR</a></button>
+
+{%endblock%}

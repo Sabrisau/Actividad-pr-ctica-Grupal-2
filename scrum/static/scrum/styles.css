@@ -69,8 +69,7 @@ li:hover a {
     }
 }
 
-button, .submit {
-    display: inline-block;
+button, .submit{
     width: fit-content;
     background-color: rgb(126, 79, 255);
     color: white;
@@ -91,6 +90,7 @@ button a {
 }
 
 .tarea-item-lista{
+    display: flex;
     width: 100%;
     margin: 20px 0px;
     padding: 0.5rem;
@@ -102,12 +102,13 @@ button a {
     h2 {
         font-size: 1.3rem;
         margin-bottom: 5px;
+        margin-right: 3em;
     }
 
     a {
         margin-left: 5px;
         color: rgb(126, 79, 255);
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 
@@ -160,5 +161,33 @@ button a {
         font-weight: 600;
         padding-left: 3px;
         margin-bottom: 5px;
+    }
+}
+
+.editar-eliminar-tarea a{
+    width: fit-content;
+    background-color: rgb(126, 79, 255);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirmacion-eliminar-texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    font-size: 20px;
+
+    .negrita{
+        font-weight: bold;
+        font-size: 22px;
     }
 }
